@@ -1,9 +1,10 @@
-# Tarea 4: Agenda React - Servicios Web con Express
+# Tarea 4: Agenda React
 
 **Estudiante:** Adrian Brito Nelkitts  
 **Matrícula:** 20251150  
 **Materia:** Programación Web  
 **Fecha:** 3 de noviembre 2026  
+**Servicio Web:** [http://www.raydelto.org/agenda.php](http://www.raydelto.org/agenda.php)
 
 ---
 
@@ -19,24 +20,28 @@
 
 ## 📌 Resumen del Proyecto
 
-Aplicación Full Stack de gestión de contactos con arquitectura desacoplada:
-- **Frontend (React + Vite):** Interfaz moderna y responsiva con tipografías Outfit y Plus Jakarta Sans, métricas en vivo, búsqueda interactiva, filtrado por categorías y gestión de favoritos.
-- **Backend (Node.js + Express):** API RESTful modular (`/api/contactos`) que soporta operaciones CRUD completas y persistencia en archivo JSON.
+Implementación de la **Tarea 4: Agenda React** consumiendo directamente la API pública oficial provista por el maestro Raydelto:
+
+1. **Componente Padre (`App.jsx`):** Gestiona el estado general, sincronización de datos con el servicio web y notificaciones de usuario.
+2. **Componente de Listado (`ListadoContactos.jsx`):** Consume mediante petición HTTP `GET` todos los contactos en formato JSON (`http://www.raydelto.org/agenda.php`) con buscador reactivo e indicadores visuales.
+3. **Componente para Agregar Contactos (`AgregarContacto.jsx`):** Envía mediante HTTP `POST` los campos `nombre`, `apellido` y `telefono` en formato JSON para almacenar nuevos registros.
 
 ---
 
-## 🚀 Ejecución Rápida
+## 🚀 Ejecución
 
 1. **Instalar dependencias:**
    ```bash
-   npm install
    cd client && npm install && cd ..
    ```
 
-2. **Iniciar servidor y cliente en paralelo:**
+2. **Iniciar la aplicación:**
+   ```bash
+   npm run client
+   ```
+   O para ejecutar en modo concurrente:
    ```bash
    npm run dev
    ```
 
 - Frontend: [http://localhost:5173](http://localhost:5173)
-- Backend API: [http://localhost:4000/api/contactos](http://localhost:4000/api/contactos)

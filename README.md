@@ -9,11 +9,14 @@
 
 ## 📸 Evidencias de Ejecución
 
-### 1. Servidor Express en ejecución
-![Servidor Express](docs/screenshots/servidor_express.png)
+### 1. Interfaz Web conectada al Servicio Web Express
+![Interfaz Web Contactos](docs/screenshots/interfaz_web_contactos.jpg)
 
-### 2. Petición GET al Servicio Web (JSON de contactos)
-![Servicio Web GET](docs/screenshots/servicio_get_json.png)
+### 2. Respuesta GET en formato JSON (`http://localhost:4000/contactos`)
+![Servicio Web GET JSON](docs/screenshots/servicio_get_json.png)
+
+### 3. Servidor Express en ejecución (Node.js + Nodemon en puerto 4000)
+![Servidor Express Consola](docs/screenshots/servidor_express.png)
 
 ---
 
@@ -31,7 +34,7 @@ Servicio Web desarrollado con **Node.js** y **Express** que implementa las dos o
 - `server/server.js`: Configuración principal del servidor Express, CORS y rutas del servicio web.
 - `server/routes/contactos.js`: Definición de los endpoints `GET` y `POST`.
 - `server/controllers/contactosController.js`: Lógica para listar y almacenar contactos en `server/data/contacts.json`.
-- `client/`: Interfaz en React conectada al servicio web local (`http://localhost:4000/contactos`) para probar el listado y registro de contactos.
+- `client/`: Interfaz moderna en React conectada al servicio web local para probar el listado y registro de contactos.
 
 ---
 

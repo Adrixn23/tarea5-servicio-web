@@ -2,11 +2,7 @@ const express = require('express');
 const router = express.Router();
 const contactosController = require('../controllers/contactosController');
 
-router.get('/', contactosController.obtenerContactos);
-router.get('/:id', contactosController.obtenerContactoPorId);
-router.post('/', contactosController.crearContacto);
-router.put('/:id', contactosController.actualizarContacto);
-router.delete('/:id', contactosController.eliminarContacto);
-router.patch('/:id/favorito', contactosController.alternarFavorito);
+router.get('/', contactosController.listarContactos);
+router.post('/', contactosController.almacenarContacto);
 
 module.exports = router;

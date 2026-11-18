@@ -1,4 +1,4 @@
-const API_URL = 'http://www.raydelto.org/agenda.php';
+const API_URL = 'http://localhost:4000/contactos';
 
 export const contactoService = {
   async obtenerTodos() {
@@ -20,7 +20,7 @@ export const contactoService = {
         telefono: contacto.telefono
       })
     });
-    if (!res.ok) throw new Error('Error al guardar el contacto en el servidor');
-    return res.json().catch(() => ({ exito: true }));
+    if (!res.ok) throw new Error('Error al almacenar el contacto');
+    return res.json();
   }
 };

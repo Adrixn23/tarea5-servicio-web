@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, RefreshCw, BookOpen, Layers } from 'lucide-react';
+import { RefreshCw, Server } from 'lucide-react';
 import { contactoService } from './services/api';
 import AgregarContacto from './components/AgregarContacto';
 import ListadoContactos from './components/ListadoContactos';
@@ -14,16 +14,16 @@ export default function App() {
     setToast({ mensaje, tipo });
     setTimeout(() => {
       setToast(null);
-    }, 3200);
+    }, 3000);
   };
 
   const cargarContactos = async () => {
     try {
       setCargando(true);
       const data = await contactoService.obtenerTodos();
-      setContactos(data.reverse());
+      setContactos([...data].reverse());
     } catch (error) {
-      mostrarNotificacion('Error al conectar con la API de Raydelto', 'error');
+      mostrarNotificacion('Error al conectar con el servicio web local', 'error');
     } finally {
       setCargando(false);
     }
@@ -37,11 +37,11 @@ export default function App() {
     try {
       setGuardando(true);
       await contactoService.crear(nuevoContacto);
-      mostrarNotificacion('Contacto agregado a la agenda con éxito');
+      mostrarNotificacion('Contacto almacenado correctamente');
       if (callbackExito) callbackExito();
       cargarContactos();
     } catch (error) {
-      mostrarNotificacion('No se pudo guardar el contacto', 'error');
+      mostrarNotificacion('No se pudo almacenar el contacto', 'error');
     } finally {
       setGuardando(false);
     }
@@ -52,7 +52,7 @@ export default function App() {
       {toast && (
         <div className="toast-container">
           <div className={`toast ${toast.tipo}`}>
-            {toast.tipo === 'success' ? '✓' : '⚠️'} {toast.mensaje}
+            {toast.mensaje}
           </div>
         </div>
       )}
@@ -60,37 +60,36 @@ export default function App() {
       <header className="app-header">
         <div>
           <div className="brand-badge">
-            <Sparkles size={14} />
+            <Server size={14} />
             <span>Programación Web · ITLA</span>
           </div>
-          <h1 className="brand-title">Agenda React</h1>
+          <h1 className="brand-title">Servicio Web de Contactos</h1>
           <div className="brand-subtitle">
-            <span>Tarea 4: Consumo de Servicio Web (raydelto.org/agenda.php)</span>
+            <span>Tarea 5: Servicio Web con Express (GET / POST /contactos)</span>
             <span className="tag-academic">Adrian Brito Nelkitts · 20251150</span>
           </div>
         </div>
 
         <div className="header-actions">
-          <button 
-            className="btn btn-secondary" 
+          <button
+            className="btn btn-secondary"
             onClick={cargarContactos}
             disabled={cargando}
-            title="Sincronizar con API externa"
           >
             <RefreshCw size={16} className={cargando ? 'animate-spin' : ''} />
-            <span>Sincronizar</span>
+            <span>Actualizar</span>
           </button>
         </div>
       </header>
 
       <main className="agenda-layout">
-        <AgregarContacto 
-          onAgregarContacto={handleAgregarContacto} 
-          cargando={guardando} 
+        <AgregarContacto
+          onAgregarContacto={handleAgregarContacto}
+          cargando={guardando}
         />
-        <ListadoContactos 
-          contactos={contactos} 
-          cargando={cargando} 
+        <ListadoContactos
+          contactos={contactos}
+          cargando={cargando}
         />
       </main>
     </div>

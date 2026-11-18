@@ -39,8 +39,8 @@ export default function AgregarContacto({ onAgregarContacto, cargando }) {
           <UserPlus size={20} />
         </div>
         <div>
-          <h3>Nuevo Contacto</h3>
-          <p>Registra un contacto en la agenda oficial</p>
+          <h3>Almacenar Contacto</h3>
+          <p>Envía una petición POST al servicio Express</p>
         </div>
       </div>
 
@@ -89,7 +89,7 @@ export default function AgregarContacto({ onAgregarContacto, cargando }) {
             <input
               id="telefono"
               type="tel"
-              placeholder="Ej. 809-555-2025"
+              placeholder="Ej. 809-555-1150"
               value={telefono}
               onChange={(e) => {
                 setTelefono(e.target.value);
@@ -106,7 +106,7 @@ export default function AgregarContacto({ onAgregarContacto, cargando }) {
             'Guardando...'
           ) : (
             <>
-              <CheckCircle2 size={16} /> Agregar a la Agenda
+              <CheckCircle2 size={16} /> Guardar Contacto
             </>
           )}
         </button>

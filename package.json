@@ -1,7 +1,7 @@
 {
-  "name": "tarea4-agenda-react-express",
+  "name": "tarea5-servicio-web-express",
   "version": "1.0.0",
-  "description": "Tarea 4: Agenda React con Servicios Web Express - Programación Web",
+  "description": "Tarea 5: Servicio Web con Express - Programación Web ITLA",
   "main": "server/server.js",
   "scripts": {
     "server": "nodemon server/server.js",
@@ -11,20 +11,17 @@
     "build": "npm run build --prefix client"
   },
   "keywords": [
-    "react",
     "express",
     "nodejs",
     "agenda",
-    "itla",
-    "programacion-web"
+    "servicio-web",
+    "itla"
   ],
-  "author": "Estudiante ITLA",
+  "author": "Adrian Brito Nelkitts",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2",
-    "morgan": "^1.10.0"
+    "express": "^4.21.2"
   },
   "devDependencies": {
     "concurrently": "^9.1.2",

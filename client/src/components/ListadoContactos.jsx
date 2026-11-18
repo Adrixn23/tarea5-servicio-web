@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Search, Users, Phone, UserCheck, Inbox } from 'lucide-react';
 
 const PALETA_AVATARES = [
-  '#4f46e5', '#0284c7', '#059669', '#d97706', '#db2777', 
+  '#4f46e5', '#0284c7', '#059669', '#d97706', '#db2777',
   '#7c3aed', '#0891b2', '#ea580c', '#6366f1'
 ];
 
@@ -37,9 +37,9 @@ export default function ListadoContactos({ contactos, cargando }) {
             <Users size={20} />
           </div>
           <div>
-            <h3>Contactos Almacenados</h3>
+            <h3>Listado de Contactos</h3>
             <p>
-              {contactos.length} contactos sincronizados en tiempo real
+              {contactos.length} contactos obtenidos mediante petición GET
             </p>
           </div>
         </div>
@@ -48,7 +48,7 @@ export default function ListadoContactos({ contactos, cargando }) {
           <Search size={16} className="search-icon" />
           <input
             type="text"
-            placeholder="Buscar por nombre, apellido o teléfono..."
+            placeholder="Buscar contacto..."
             value={busqueda}
             onChange={(e) => setBusqueda(e.target.value)}
           />
@@ -58,7 +58,7 @@ export default function ListadoContactos({ contactos, cargando }) {
       {cargando ? (
         <div className="loading-state">
           <div className="spinner"></div>
-          <p>Cargando contactos desde la API...</p>
+          <p>Consultando servicio web Express...</p>
         </div>
       ) : filtrados.length === 0 ? (
         <div className="empty-state">

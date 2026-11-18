@@ -7,6 +7,16 @@
 
 ---
 
+## 📸 Evidencias de Ejecución
+
+### 1. Servidor Express en ejecución
+![Servidor Express](docs/screenshots/servidor_express.png)
+
+### 2. Petición GET al Servicio Web (JSON de contactos)
+![Servicio Web GET](docs/screenshots/servicio_get_json.png)
+
+---
+
 ## Descripción
 
 Servicio Web desarrollado con **Node.js** y **Express** que implementa las dos operaciones básicas del servicio `http://www.raydelto.org/agenda.php`:
